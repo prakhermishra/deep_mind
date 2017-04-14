@@ -1,0 +1,16 @@
+import cv2, numpy, os
+import dlib
+from skimage import io
+#predictor_path = sys.argv[1]
+fn_haar = 'haarcascade_frontalface_default.xml'
+fn_dir = 'att_faces'
+size = 4
+detector = dlib.get_frontal_face_detector()
+
+count =0 
+img = cv2.imread("/home/prakkk/Downloads/classpicturesfortesting/prakhar_singhu.jpg")
+dets = detector.run(img, 1)
+for i, d in enumerate(dets):
+	count+=1	
+	crop = img[d.top():d.botton(), d.left():d.right()]
+	cv2.imwrite("{}".format(count), crop)
