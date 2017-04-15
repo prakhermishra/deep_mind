@@ -1,0 +1,2 @@
+#!/bin/sh
+/root/openface/demos/classifier.py infer ./generated-embeddings/classifier.pkl ./training-images/hugh/index.jpeg
